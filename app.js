@@ -16,10 +16,11 @@ for (const file of commandFiles) {
 }
 
 client.once('ready', () => {
-	console.log('Successfully launched.');
+	console.log('Awaiting messages...');
 });
 
 //await message input
+    
 client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
@@ -44,4 +45,7 @@ client.on('message', message => {
 }
 });
 
+console.log('Logging in...');
 client.login(token);
+console.log('Successfully logged in.');
+console.log('Successfully launched.');
