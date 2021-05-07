@@ -51,6 +51,7 @@ const filter = (reaction, user) => {
 	return reaction.emoji.name === emoji && user.id === message.author.id;
 };
 
+//todo test this
 reactionClient.on('message', async (message) => {
     message.awaitReactions(filter, { max: 4, time: 60000, errors: ['time'] })
 	.then(collected => console.log(collected.size))
